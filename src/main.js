@@ -1,5 +1,8 @@
 var roleHarvester = require('/roles/role_harvester');
 
 module.exports.loop = function() {
-  //put shit here
+  for(var name in Game.creeps) {
+    var creep = Game.creeps[name];
+    roleHarvester.run(creep);
+  }
 }
